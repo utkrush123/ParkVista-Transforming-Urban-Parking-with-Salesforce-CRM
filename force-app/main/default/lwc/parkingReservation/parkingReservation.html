@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Available Parking Lots">
+        <template if:true={parkingLots.data}>
+            <template for:each={parkingLots.data} for:item="lot">
+                <p key={lot.Id}>
+                    {lot.Lot_Name__c} - Available Spots: {lot.Available_Spots__c} - Price: {lot.Price_Per_Hour__c} 
+                    <lightning-button label="Book" onclick={handleBooking} data-id={lot.Id}></lightning-button>
+                </p>
+            </template>
+        </template>
+        <template if:true={parkingLots.error}>
+            <p>Error: {parkingLots.error}</p>
+        </template>
+    </lightning-card>
+</template>

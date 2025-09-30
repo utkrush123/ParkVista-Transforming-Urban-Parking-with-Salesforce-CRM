@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Parking Availability">
+        <template if:true={lots}>
+            <template for:each={lots} for:item="lot">
+                <div key={lot.Id} class="lot-container">
+                    <strong>{lot.Lot_Name__c}</strong>
+                    <div class="slots">
+                        <template for:each={lot.slots} for:item="slot">
+                            <span key={slot.id} class={slot.class}>{slot.label}</span>
+                        </template>
+                    </div>
+                </div>
+            </template>
+        </template>
+        <template if:false={lots}>
+            <p>No parking lots available.</p>
+        </template>
+    </lightning-card>
+</template>

@@ -1,0 +1,13 @@
+.available {
+    color: green;
+    font-weight: bold;
+    margin-right: 2px;
+}
+.occupied {
+    color: red;
+    font-weight: bold;
+    margin-right: 2px;
+}
+.lot-container {
+    margin-bottom: 1rem;
+}
